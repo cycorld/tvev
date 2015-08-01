@@ -6,6 +6,10 @@ class Tv < ActiveRecord::Base
     comments.each do |c|
       total += c.score
     end
-    total.to_f / comments.count
+    if comments.count == 0
+      0
+    else
+      total.to_f / comments.count
+    end
   end
 end
