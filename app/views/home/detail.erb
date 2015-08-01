@@ -22,28 +22,21 @@
 <div class="row">
   <div class="col-lg-12">
     <!-- 각 코멘트들 -->
-    <div class="well">
-      <span class="star-rating small">
-        <i></i>
-        <i></i>
-        <i class="on"></i>
-        <i></i>
-        <i></i>
-      </span>
-      <p>User1 : Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-    </div>
+    <% @tv.comments.each do |c| %>
+      <div class="well">
+        <span class="star-rating small">
+          <% 1.upto(5) do |i| %>
+            <% if i == c.score %>
+              <i class="on"></i>
+            <% else %>
+              <i></i>
+            <% end %>
+          <% end %>
+        </span>
+        <p><%=c.user_id%> : <%=c.comment%></p>
+      </div>
+    <% end %>
     <!-- 각 코멘트 끝 -->
-
-    <div class="well">
-      <span class="star-rating small">
-        <i></i>
-        <i></i>
-        <i class="on"></i>
-        <i></i>
-        <i></i>
-      </span>
-      <p>User2 : Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-    </div>
 
   </div>
 </div>
