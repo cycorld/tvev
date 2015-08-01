@@ -4,13 +4,15 @@
   <h1><%=@banner.title%></h1>
   <p class="lead"><%=@banner.intro%></p>
   <span class="star-rating">
-    <i></i>
-    <i></i>
-    <i></i>
-    <i class="on"></i>
-    <i></i>
+    <% 1.upto(5) do |i| %>
+      <% if i == @banner.avg.round(0) %>
+        <i class="on"></i>
+      <% else %>
+        <i></i>
+      <% end %>
+    <% end %>
   </span>
-  <p id="count">4.2 점 (250 명)</p>
+  <p id="count"><%=@banner.avg.round(1)%> 점 (<%=@banner.comments.count%> 명)</p>
   <p><a class="btn btn-lg btn-success" href="/home/detail/<%=@banner.id%>" role="button">자세히 보기</a></p>
 </div>
 <!-- 배너끝 -->
