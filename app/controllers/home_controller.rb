@@ -15,4 +15,8 @@ class HomeController < ApplicationController
 
   def create
   end
+
+  def ev
+    redirect_to :back
+  end
 end
