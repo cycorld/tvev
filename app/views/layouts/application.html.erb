@@ -16,6 +16,12 @@
       <ul class="nav nav-pills pull-right">
         <li role="presentation"><a href="/">전체 방송 리스트</a></li>
         <li role="presentation"><a href="/home/upload">방송등록하기</a></li>
+        <% if user_signed_in? %>
+          <li role="presentation"><a href="/users/sign_out" data-method="delete">로그아웃</a></li>
+        <% else %>
+          <li role="presentation"><a href="/users/sign_in">로그인</a></li>
+          <li role="presentation"><a href="/users/sign_up">회원가입</a></li>
+        <% end %>
       </ul>
     </nav>
     <h3 class="text-muted">방송 평점 서비스</h3>
