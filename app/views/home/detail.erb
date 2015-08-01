@@ -33,6 +33,7 @@
             <% end %>
           <% end %>
         </span>
+        <%=c.created_at.in_time_zone("Seoul")%>
         <p><%=c.user_id%> : <%=c.comment%></p>
       </div>
     <% end %>
