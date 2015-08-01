@@ -3,7 +3,8 @@
   <h1><%=@tv.title%></h1>
   <p class="lead"><%=@tv.intro%></p>
   <p id="count">4.2 점 (250 명)</p>
-  <form>
+  <%=form_tag "/home/ev", method: "post" do %>
+    <input type="hidden" name="id" value="<%=@tv.id%>">
     <span class="star-rating">
       <input type="radio" name="rating" value="1"><i></i>
       <input type="radio" name="rating" value="2"><i></i>
@@ -15,7 +16,7 @@
     <input type="text" class="form-control" name="msg" placeholder="별점 체크 후 평가를 남겨주세요">
     <br>
     <button class="btn btn-success" href="#" role="button">평가하기</button>
-  </form>
+  <% end %>
 </div>
 
 <div class="row">
