@@ -2,7 +2,7 @@
   <img src="<%=@tv.img%>" width="100%">
   <h1><%=@tv.title%></h1>
   <p class="lead"><%=@tv.intro%></p>
-  <p id="count">4.2 점 (250 명)</p>
+  <p id="count"><%=@tv.avg.round(1)%> 점 (<%=@tv.comments.count%> 명)</p>
   <%=form_tag "/home/ev", method: "post" do %>
     <input type="hidden" name="id" value="<%=@tv.id%>">
     <span class="star-rating">
