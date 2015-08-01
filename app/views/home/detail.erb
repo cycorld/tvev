@@ -22,7 +22,7 @@
 <div class="row">
   <div class="col-lg-12">
     <!-- 각 코멘트들 -->
-    <% @tv.comments.each do |c| %>
+    <% @tv.comments.reverse.each do |c| %>
       <div class="well">
         <span class="star-rating small">
           <% 1.upto(5) do |i| %>
