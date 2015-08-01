@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, only: [:upload, :create]
+  before_action :authenticate_user!, only: [:upload, :create, :ev]
 
   def index
     @tvs = Tv.all
@@ -17,6 +17,7 @@ class HomeController < ApplicationController
   end
 
   def ev
+    Comment.create(tv_id: params[:id], user_id: current_user.id, score: params[:rating].to_i, comment: params[:msg])
     redirect_to :back
   end
 end
