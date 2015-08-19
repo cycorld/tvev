@@ -14,6 +14,11 @@ class HomeController < ApplicationController
   end
 
   def create
+    Tv.create(user_id: current_user.id,
+              title: params[:jemock],
+              img: params[:url],
+              intro: params[:sogae])
+    redirect_to '/'
   end
 
   def ev
